@@ -1,4 +1,4 @@
-# Cat -> Kat
+# Kat
 Very simple copy of cat program
 
 # Dependencies
