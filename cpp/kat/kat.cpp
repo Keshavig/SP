@@ -16,7 +16,7 @@ bool isValidFile(const char *str) {
     std::string username = getenv("USER");
     std::string halfFilePath = filepath.substr(pos + 1);
 
-    std::string Actualfilepath = "/home/" + username + halfFilePath;
+    Actualfilepath = "/home/" + username + halfFilePath;
   }
 
   bool exist = std::filesystem::exists(Actualfilepath);
