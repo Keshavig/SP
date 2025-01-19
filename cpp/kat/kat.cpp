@@ -1,64 +1,66 @@
-#include <iostream>
-#include <cstdlib>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 
-#define ERRCODE -1
+#include "kat.hpp"
 
-bool checkValidFile(const char* str)
-{
-   const std::string filepath = std::string(str);
-   std::string Actualfilepath;
+bool isValidFile(const char *str) {
+  const std::string filepath = std::string(str);
+  std::string Actualfilepath;
 
-   size_t pos = filepath.find("~");
+  size_t pos = filepath.find("~");
 
-   if (pos == std::string::npos)
-      Actualfilepath = filepath;
-   else { std::string username = getenv("USER"); std::string halfFilePath = filepath.substr(pos+1);
+  if (pos == std::string::npos)
+    Actualfilepath = filepath;
+  else {
+    std::string username = getenv("USER");
+    std::string halfFilePath = filepath.substr(pos + 1);
 
-      std::string Actualfilepath = "/home/" +  username + halfFilePath;
-   }
+    std::string Actualfilepath = "/home/" + username + halfFilePath;
+  }
 
-
-   bool exist = std::filesystem::exists(Actualfilepath);
-   return exist;
+  bool exist = std::filesystem::exists(Actualfilepath);
+  return exist;
 }
 
-size_t checkArgument(size_t argc, char* argv[])
-{
-   for (size_t i = 1; i < argc; i++)
-   {
-      /*TODO store all true files in a vector to print them all; for in case user does something like cat file1.txt file2.txt etc */
-      if (checkValidFile(argv[i])) {
-         return i;
-      }
-   }
-
-   return ERRCODE;
+void printHeaderDecorator(const std::string &str) {
+  std::cout << "====================" << str << "====================" << std::endl;
 }
 
-void printfile(const std::string& file) {
-   std::ifstream File(file);
+void printfile(const std::string &file) {
+  std::ifstream File(file);
 
-   if (File.is_open())
-      std::cout << File.rdbuf();
-   else 
-      std::cerr << "Failed to open file" << std::endl;
+  if (File.is_open()) {
+#if SIMPLE_MULTI_FILE_DECORATION
+    printHeaderDecorator(file);
+#endif
 
-   File.close();
+    std::cout << File.rdbuf();
+    File.close();
+
+#if SIMPLE_MULTI_FILE_DECORATION
+    printHeaderDecorator(file);
+#endif
+
+    return;
+  }
+
+  std::cout << "File opening failed: " << file << std::endl;
 }
 
-int main(int argc, char* argv[])
-{
-   if (argc < 2) {
-      std::cerr << "File name not provided" << std::endl;
-      return ERRCODE;
-   }
+void checkArgument(size_t argc, char *argv[]) {
+  for (size_t i = 1; i < argc; i++) {
+    if (isValidFile(argv[i]))
+      printfile(argv[i]);
+  }
+}
 
-   size_t out = checkArgument(argc, argv);
+int main(int argc, char *argv[]) {
+  if (argc < 2) {
+    std::cerr << "File name not provided" << std::endl;
+    return 1;
+  }
 
-   if (out != ERRCODE) 
-      printfile(argv[out]);
-
-   return 0;
+  checkArgument(argc, argv);
+  return 0;
 }
