@@ -8,6 +8,5 @@ A simple manual neofetch like program
 # Build
 '''Shell
 g++ sarchi.cpp -o sarchi -Wall -Wextra -Werror -O3
-'''
 
 Make sure to put the executable in your path
