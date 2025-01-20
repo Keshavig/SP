@@ -6,7 +6,7 @@ A simple manual neofetch like program
 - Make sure to build the program after changing sarchi.hpp or sarchi.cpp
 
 # Build
-'''Shell
+'''bash
 g++ sarchi.cpp -o sarchi -Wall -Wextra -Werror -O3
 
 Make sure to put the executable in your path
