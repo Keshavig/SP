@@ -1,2 +1,2 @@
-# Simple-Gnu-utils
-Very minimal versions of few gnu utils
+# Simple Programs
+Simple Programs I made to learn C++
