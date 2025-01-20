@@ -49,7 +49,7 @@ private:
       std::cout << "\033[o";
    }
 
-public:
+private:
    template<typename T> 
    void print(const T& message, const std::string& hexColor)
    {
@@ -67,7 +67,7 @@ public:
          std::cout << ' ';
    }
 
-
+public:
    void printInfo(const std::string& hexColor)
    {
       size_t logoSize = ARCHLINUX_LOGO.size();
@@ -77,7 +77,7 @@ public:
          print<std::string>(ARCHLINUX_LOGO[i], hexColor);
 
          if (i < compoSize) {
-            printSpaces(1);
+            printSpaces(NUM_SPACES);
             print<std::string>(ComponentSet[i].componentName, ComponentSet[i].componentColor);
             print<std::string>(ComponentSet[i].componentValue, ComponentSet[i].componentColor);
          }
