@@ -4,6 +4,7 @@
 #include <string>
 
 #include "../logos/ArchSmall.hpp"
+#include "shellcmd.hpp"
 
 typedef struct components {
    std::string componentName;
@@ -16,6 +17,9 @@ typedef struct components {
 const std::string LOGOCOLOR = "#ff007c";
 const std::string SPACE = "NONE";
 
+// Removing newlines since without that we get '[ zsh' NEWLINE and then ']'
+const std::string shell = shellcmd("ps -p $$ -o comm= | tr -d '\n'");
+
 const size_t NUM_SPACES = 4; // the no of spaces between the logo and info stuff
 const std::vector<components> ComponentSet = {
    //Component's Name            // Component's Value                // Component's Color
@@ -24,5 +28,6 @@ const std::vector<components> ComponentSet = {
    { "[ Terminal ] -> ",            "[ Kitty ]          ",                           "#1abc9c"},
    { "[ Theme ]    -> ",            "[ Tokyonight-dark ]",                           "#3d59a1"},
    { "[ Wm ]       -> ",            "[ Dwm ]            ",                           "#3d59a1"},
-   { "[ Shell ]    -> ",            "[ Zsh ]            ",                           "#ff9e64"},
+   //{ "[ Shell ]    -> ",            "[ Zsh ]            ",                           "#ff9e64"},
+   { "[ Shell ]    -> ",            "[ " + shell + " ] ",                           "#ff9e64"},
 };

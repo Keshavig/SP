@@ -10,12 +10,13 @@ I use arch so it works in arch but since it should work in all linux distros
 - Make sure to build the program after changing `sarchi.hpp` or `sarchi.cpp`
 
 # Build
+Go into source directory and then run following command
 ```bash
-g++ sarchi.cpp -o sarchi -Wall -Wextra -Werror -O3
+clang++ sarchi.cpp colors.cpp shellcmd.cpp -o sarchi -Wall -Wextra -Werror -O3
 
 ```
 
 # TODO 
 
-- Add support for running bash commands
+- Add support for running bash commands \[KINDA DONE\]
 - Add MakeFile
