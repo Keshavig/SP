@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-#include "logos/ArchNeofetch.hpp"
+#include "logos/ArchSmall.hpp"
 
 typedef struct components {
    std::string componentName;
@@ -13,19 +13,16 @@ typedef struct components {
 
 
 
-const std::string LOGOCOLOR = "#7aa2f7";
+const std::string LOGOCOLOR = "#ff007c";
 const std::string SPACE = "NONE";
 
 const size_t NUM_SPACES = 4; // the no of spaces between the logo and info stuff
 const std::vector<components> ComponentSet = {
    //Component's Name            // Component's Value                // Component's Color
-   { "",                         "ke@archi",                       "#ff007c"},
-   { "Name: ",                   "Ke",                             "#f7768e"},
-   { "Os: ",                     "Arch Linux",                     "#914c54"},
-   { "Terminal: ",               "Kitty",                          "#ff9e64"},
-   { "Font: ",                   "JetBrainsMono Nerd Font",        "#e0af68"},
-   { "Shell: ",                  "Zsh",                            "#9ece6a"},
-   { "Theme: ",                  "Tokyonight-dark",                "#1abc9c"},
-   { "TextEditor : ",            "Neovim",                         "#41a6b5"},
-   { "WindowManager: ",          "Dwm",                            "#449dab"},
+   { "",                            "[ ke@archi ]       ",                           "#7dcfff"},
+   { "[ Name ]     -> ",            "[ ke ]             ",                           "#1abc9c"},
+   { "[ Terminal ] -> ",            "[ Kitty ]          ",                           "#1abc9c"},
+   { "[ Theme ]    -> ",            "[ Tokyonight-dark ]",                           "#3d59a1"},
+   { "[ Wm ]       -> ",            "[ Dwm ]            ",                           "#3d59a1"},
+   { "[ Shell ]    -> ",            "[ Zsh ]            ",                           "#ff9e64"},
 };
