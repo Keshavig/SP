@@ -1,4 +1,8 @@
+
 # Sarchi
+
+![Sarchi Image](./img/img.png?raw=true "Sarchi Image")
+
 A simple manual neofetch-like program
 
 # Configuration
