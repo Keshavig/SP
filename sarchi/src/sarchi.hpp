@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-#include "logos/ArchSmall.hpp"
+#include "../logos/ArchSmall.hpp"
 
 typedef struct components {
    std::string componentName;
