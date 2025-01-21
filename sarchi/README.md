@@ -1,9 +1,11 @@
 # Sarchi
 
 ![Sarchi Image](./img/img.png?raw=true "Sarchi Image")
+
+<br>
 A simple manual neofetch-like program.
 Only Works in linux.
-I use arch so it works in arch but since it should work in all linux distros
+I use arch so it works in arch but should work in all linux distros
 
 # Configuration
 - Configure the program by changing `sarchi.hpp` or by just changing the source file (`sarchi.cpp`)
