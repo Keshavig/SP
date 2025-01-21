@@ -8,3 +8,10 @@ A simple manual neofetch-like program
 # Build
 ```bash
 g++ sarchi.cpp -o sarchi -Wall -Wextra -Werror -O3
+
+```
+
+# TODO 
+
+- Add support for running bash commands
+```
