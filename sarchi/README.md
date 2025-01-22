@@ -8,17 +8,12 @@ Only Works in linux.
 I use arch so it works in arch but should work in all linux distros
 
 # Configuration
-- Configure the program by changing `sarchi.hpp` or by just changing the source file (`sarchi.cpp`)
-- Make sure to build the program after changing `sarchi.hpp` or `sarchi.cpp`
+- Configure the program and components being loaded by changing sarchi.hpp
+- Change the logo being loaded by making your own ascii logo in logos/ and include that in sarchi.hpp
+- Always build the program after changing any of the source or header files
 
 # Build
-Go into source directory and then run following command
+In sarchi directory, run following command
 ```bash
-clang++ sarchi.cpp colors.cpp shellcmd.cpp -o sarchi -Wall -Wextra -Werror -O3
-
+make
 ```
-
-# TODO 
-
-- Add support for running bash commands \[KINDA DONE\]
-- Add MakeFile
