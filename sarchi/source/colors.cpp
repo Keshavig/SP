@@ -20,8 +20,9 @@ void Colorful::M_printSpaces(size_t spaces) {
 }
 
 void Colorful::M_setTermColor(const std::string& hexColorCode) {
-   if (hexColorCode == "NONE" || hexColorCode == "NULL" || hexColorCode == "" || hexColorCode == "NORMAL")
+   if (hexColorCode == "NONE" || hexColorCode == "NULL" || hexColorCode == "" || hexColorCode == "NORMAL" || hexColorCode == "DEFAULT") {
       return;
+   }
 
    if (!M_checkColorCodeValidation(hexColorCode)) {
       std::cout << "error: invalid hex color code (should be 7 characters long; in the form of #rrggbb): " << hexColorCode << std::endl;

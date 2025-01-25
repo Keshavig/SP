@@ -1,6 +1,8 @@
 CXX = clang++
-CXXFLAGS_INSTALL = -Wall -Wextra -Werror -O3
+CXXFLAGS_INSTALL = -Wall -Wextra -Werror -O2
 CXXFLAGS_DEBUG = -Wall -Wextra -Werror -ggdb
+
+CXXFLAGS  = $(CXXFLAGS_INSTALL)
 
 SRC_DIR = source
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -8,6 +10,8 @@ OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(SRC_DIR)/%.o)
 
 TARGET = sarchi
 EXECUTABLE_DIR = bin
+
+INSTALL_DIR = ~/.local/bin
 
 # Default build (optimized)
 all: release
@@ -34,3 +38,6 @@ $(EXECUTABLE_DIR):
 # Clean build files
 clean:
 	rm -rf $(EXECUTABLE_DIR) $(SRC_DIR)/*.o
+
+install: all
+	mv $(EXECUTABLE_DIR)/$(TARGET)  $(INSTALL_DIR)

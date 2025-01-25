@@ -15,5 +15,5 @@ I use arch so it works in arch but should work in all linux distros
 # Build
 In sarchi directory, run following command
 ```bash
-make
+make clean all install clean
 ```

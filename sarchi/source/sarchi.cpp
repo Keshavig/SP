@@ -5,17 +5,16 @@
 #include "sarchi.hpp"
 #include "colors.hpp"
 
-void sarchiPrint(const std::string &hexColor, Colorful& colorful)
+void sarchiPrint(Colorful& colorful)
 {
    size_t logoSize = DISTRO_LOGO.size();
    size_t compoSize = ComponentSet.size();
 
    size_t loopRunner = logoSize > compoSize ? logoSize : compoSize;
 
-   // We will loop for the longest thing, what is longer? the length of distro logo or the no of components 
    for (size_t i = 0; i < loopRunner; ++i) {
       if (i < logoSize) {
-         colorful.M_print(DISTRO_LOGO[i], hexColor);
+         colorful.M_print(DISTRO_LOGO[i], LOGOCOLOR);
       }
 
       // What to do if we have more components than the no of strings in
@@ -32,11 +31,11 @@ void sarchiPrint(const std::string &hexColor, Colorful& colorful)
 }
 
 int main(void) {
-   Colorful colorful;
    std::cout << '\n';
-
-   sarchiPrint(LOGOCOLOR, colorful);
-   std::cout << std::endl;
-
+   
+   Colorful colorful;
+   sarchiPrint(colorful);
+   
+   std::cout << '\n';
    return 0;
 }
