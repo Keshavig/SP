@@ -33,17 +33,18 @@ const std::string cpuPerc       = shellcmd("cperc | tr -d '\n'");
 
 const size_t NUM_SPACES = 4; // the no of spaces between the logo and info stuff
 
-// const std::vector<components> ComponentSet = {
-//    /* Component's Name              Component's Value                            Component's Color */
-//    { "   Os:       ",            " "+distroName+"   ",                           "#1abc9c"},
-//    { "   Name:     ",            " "+username+"     ",                           "#9ece6a"},
-//    { "   Terminal: ",            " Kitty            ",                           "#f7768e"},
-//    { "   Theme:    ",            " Tokyonight-dark  ",                           "#7dcfff"},
-//    { "   Wm:       ",            " "+wmName+"       ",                           "#3d59a1"},
-//    { "   Shell:    ",            " Zsh              ",                           "#ff9e64"},
-// };
+/* The Smaller config show in the first pic THEME: Tokyo night */
 
-
+/* const std::vector<components> ComponentSet = { */
+   /* Component's Name              Component's Value                            Component's Color */
+/* { "   Os:       ",            " "+distroName+"   ",                           "#1abc9c"},
+   { "   Name:     ",            " "+username+"     ",                           "#9ece6a"},
+   { "   Terminal: ",            " Kitty            ",                           "#f7768e"},
+   { "   Theme:    ",            " Tokyonight-dark  ",                           "#7dcfff"},
+   { "   Wm:       ",            " "+wmName+"       ",                           "#3d59a1"},
+   { "   Shell:    ",            " Zsh              ",                           "#ff9e64"},
+}; */
+   
 /* THEME: Doom one */
 const std::vector<components> ComponentSet = {
    /* Component's Name              Component's Value                            Component's Color */

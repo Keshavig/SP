@@ -1,6 +1,7 @@
 # Sarchi
 
 ![Sarchi Image](./img/img.png?raw=true "Sarchi Image")
+![Sarchi Doom One theme Image](./img/img-doomOne.png?raw=true "Sarchi Doom One theme Image")
 
 <br>
 A simple neofetch-like program.
