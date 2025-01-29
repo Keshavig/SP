@@ -14,8 +14,8 @@ I use arch so it works in arch but should work in all linux distros
 - Always build the program after changing any of the source or header files
 
 # Dependencies (Very optional)
-[wmctrl](https://github.com/saravanabalagi/wmctrl) <br>
-[cperc](https://github.com/Keshavig/SP/tree/main/cperc)
+- [wmctrl](https://github.com/saravanabalagi/wmctrl)
+- [cperc](https://github.com/Keshavig/SP/tree/main/cperc)
 
 If you prefer not to download these programs, simply remove the corresponding lines from sarchi.hpp and adjust the settings to your preference.
 
